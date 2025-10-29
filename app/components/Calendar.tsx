@@ -119,7 +119,6 @@ export default function Calendar() {
         // Custom date formatting
         dayHeaderFormat={{ weekday: 'long' }}
         titleFormat={{ year: 'numeric', month: 'long' }}
-        className="fc-theme-standard"
       />
       
       {/* Custom styles */}
