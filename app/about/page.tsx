@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -16,12 +17,15 @@ export default function About() {
 
           <div className="flex flex-col items-center text-center mb-8">
             {/* Picture of the tour guy */}
-            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-blue-400 via-cyan-400 to-green-400 p-1 shadow-2xl mb-6">
-              <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center">
-                <span className="text-gray-300 text-sm md:text-base text-center px-4">
-                  Picture of the tour guy
-                </span>
-              </div>
+            <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-blue-400 via-cyan-400 to-green-400 p-1 shadow-2xl mb-6 overflow-hidden">
+              <Image
+                src="/tour-image.png"
+                alt="Bitcoin Tour Group"
+                width={192}
+                height={192}
+                className="w-full h-full rounded-full object-cover"
+                priority
+              />
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-4">

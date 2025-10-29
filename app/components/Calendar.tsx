@@ -134,6 +134,7 @@ export default function Calendar() {
           padding: 0.5rem 1rem !important;
           font-weight: 500 !important;
           transition: all 0.3s ease !important;
+          margin: 0 0.25rem !important;
         }
         .fc-button:hover {
           background-color: #2563EB !important;
@@ -154,6 +155,18 @@ export default function Calendar() {
         }
         .fc-header-toolbar {
           margin-bottom: 1.5rem !important;
+          gap: 0.75rem !important;
+        }
+        .fc-header-toolbar .fc-toolbar-chunk {
+          display: flex !important;
+          gap: 0.5rem !important;
+        }
+        .fc-button-group {
+          display: flex !important;
+          gap: 0.5rem !important;
+        }
+        .fc-button-group .fc-button {
+          margin: 0 !important;
         }
         .fc-event {
           cursor: pointer;

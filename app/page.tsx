@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -14,12 +15,15 @@ export default function Home() {
         <div className="relative max-w-4xl mx-auto px-8 py-20 md:py-32">
           {/* Picture of the tour guy */}
           <div className="flex justify-center mb-8">
-            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-blue-400 via-cyan-400 to-green-400 p-1 shadow-2xl">
-              <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center">
-                <span className="text-gray-300 text-sm md:text-base text-center px-4">
-                  Picture of the tour guy
-                </span>
-              </div>
+            <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-blue-400 via-cyan-400 to-green-400 p-1 shadow-2xl overflow-hidden">
+              <Image
+                src="/tour-image.png"
+                alt="Bitcoin Tour Group"
+                width={192}
+                height={192}
+                className="w-full h-full rounded-full object-cover"
+                priority
+              />
             </div>
           </div>
 
