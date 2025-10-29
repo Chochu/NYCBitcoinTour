@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -15,7 +15,37 @@ interface CalendarEvent {
 }
 
 export default function Calendar() {
-  const [events, setEvents] = useState<CalendarEvent[]>([]);
+  // Example events - you can replace this with actual data from an API
+  const initialEvents = useMemo<CalendarEvent[]>(() => {
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const threeDaysLater = new Date(today);
+    threeDaysLater.setDate(threeDaysLater.getDate() + 3);
+
+    return [
+      {
+        title: 'Bitcoin Tour Available',
+        start: today.toISOString().split('T')[0],
+        backgroundColor: '#10B981',
+        borderColor: '#059669',
+      },
+      {
+        title: 'Bitcoin Tour Available',
+        start: tomorrow.toISOString().split('T')[0],
+        backgroundColor: '#10B981',
+        borderColor: '#059669',
+      },
+      {
+        title: 'Bitcoin Tour Available',
+        start: threeDaysLater.toISOString().split('T')[0],
+        backgroundColor: '#10B981',
+        borderColor: '#059669',
+      },
+    ];
+  }, []);
+
+  const [events, setEvents] = useState<CalendarEvent[]>(initialEvents);
 
   // Load FullCalendar CSS dynamically
   useEffect(() => {
@@ -33,33 +63,7 @@ export default function Calendar() {
     };
   }, []);
 
-  // Example events - you can replace this with actual data from an API
-  useEffect(() => {
-    // Sample available tour dates
-    const sampleEvents: CalendarEvent[] = [
-      {
-        title: 'Bitcoin Tour Available',
-        start: new Date().toISOString().split('T')[0],
-        backgroundColor: '#10B981',
-        borderColor: '#059669',
-      },
-      {
-        title: 'Bitcoin Tour Available',
-        start: new Date(Date.now() + 86400000).toISOString().split('T')[0], // Tomorrow
-        backgroundColor: '#10B981',
-        borderColor: '#059669',
-      },
-      {
-        title: 'Bitcoin Tour Available',
-        start: new Date(Date.now() + 86400000 * 3).toISOString().split('T')[0], // 3 days from now
-        backgroundColor: '#10B981',
-        borderColor: '#059669',
-      },
-    ];
-    setEvents(sampleEvents);
-  }, []);
-
-  const handleDateSelect = (selectInfo: any) => {
+  const handleDateSelect = (selectInfo: { startStr: string; endStr: string }) => {
     const title = prompt('Please enter a title for your tour booking:');
     if (title) {
       setEvents([
@@ -75,7 +79,7 @@ export default function Calendar() {
     }
   };
 
-  const handleEventClick = (clickInfo: any) => {
+  const handleEventClick = (clickInfo: { event: { title: string; remove: () => void } }) => {
     if (
       confirm(
         `Are you sure you want to book the tour on ${clickInfo.event.title}?`

@@ -36,7 +36,7 @@ export default function Home() {
               Discover <span className="gradient-text">Bitcoin</span> in the Big Apple
             </h1>
             <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-              Join us for an immersive tour through New York City's Bitcoin ecosystem. Visit Bitcoin-friendly locations, meet the community, and learn about the future of money.
+              Join us for an immersive tour through New York City&apos;s Bitcoin ecosystem. Visit Bitcoin-friendly locations, meet the community, and learn about the future of money.
             </p>
           </div>
 
