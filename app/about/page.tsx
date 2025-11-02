@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-orange-200 to-orange-300">
       {/* Hero Section */}
       <section className="hero-gradient text-white py-16">
         <div className="max-w-6xl mx-auto px-8">
@@ -45,35 +45,42 @@ export default function About() {
         </div>
 
         {/* Links section */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Left side - YouTube links */}
-          <div className="space-y-4">
-            <a
-              href="https://www.youtube.com/watch?v=JY4b8doOz1c"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full py-5 px-6 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-xl text-center font-semibold shadow-lg hover:from-red-700 hover:to-red-800 transition-all duration-300 transform hover:scale-[1.02] card-hover"
-            >
-              <div className="flex items-center justify-center gap-2">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-                Link to that youtube video
+          <div className="space-y-4 md:col-span-2">
+            <div className="w-full overflow-hidden rounded-xl shadow-lg">
+              <div style={{ position: 'relative', paddingTop: '60%' }}>
+                <iframe
+                  src="https://www.youtube.com/embed/JY4b8doOz1c"
+                  title="NYC Bitcoin Tour Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full"
+                ></iframe>
               </div>
-            </a>
-            <a
-              href="https://www.youtube.com/watch?v=GsDL15Uc4V4"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full py-5 px-6 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-xl text-center font-semibold shadow-lg hover:from-red-700 hover:to-red-800 transition-all duration-300 transform hover:scale-[1.02] card-hover"
-            >
-              <div className="flex items-center justify-center gap-2">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-                Link to that youtube video
+            </div>
+            <div className="w-full overflow-hidden rounded-xl shadow-lg">
+              <div style={{ position: 'relative', paddingTop: '60%' }}>
+                <iframe
+                  src="https://www.youtube.com/embed/GsDL15Uc4V4"
+                  title="NYC Bitcoin Tour Video 2"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full"
+                ></iframe>
               </div>
-            </a>
+            </div>
+            <div className="w-full overflow-hidden rounded-xl shadow-lg">
+              <div style={{ position: 'relative', paddingTop: '60%' }}>
+                <iframe
+                  src="https://www.youtube.com/embed/IPakT25YMVg"
+                  title="NYC Bitcoin Tour Video 3"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full"
+                ></iframe>
+              </div>
+            </div>
           </div>
 
           {/* Right side - LUMA and Podcast */}
@@ -84,15 +91,20 @@ export default function About() {
               rel="noopener noreferrer"
               className="block w-full py-5 px-6 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl text-center font-semibold shadow-lg hover:from-purple-700 hover:to-purple-800 transition-all duration-300 transform hover:scale-[1.02] card-hover"
             >
-              LUMA Page
+              Events Page
             </a>
             <a
               href="https://fountain.fm/episode/zAI0tiwnWLsYbmUAUxBK"
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full py-5 px-6 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white rounded-xl text-center font-semibold shadow-lg hover:from-indigo-700 hover:to-indigo-800 transition-all duration-300 transform hover:scale-[1.02] card-hover"
+              className="block w-full py-5 px-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl text-center font-semibold shadow-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-[1.02] card-hover"
             >
-              Podcast
+              <div className="flex items-center justify-center space-x-2">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/>
+                </svg>
+                <span>Featured in Once Bitten! A Bitcoin Podcast</span>
+              </div>
             </a>
           </div>
         </div>

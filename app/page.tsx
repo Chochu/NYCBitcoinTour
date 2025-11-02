@@ -29,8 +29,8 @@ export default function Home() {
 
           {/* Hero Content */}
           <div className="text-center mb-12">
-            <div className="inline-block px-4 py-2 mb-6 bg-blue-500/20 backdrop-blur-sm rounded-full border border-blue-400/30">
-              <span className="text-cyan-300 text-sm font-semibold">New! Explore Bitcoin in NYC</span>
+            <div className="inline-block px-4 py-2 mb-6 bg-orange-100 backdrop-blur-sm rounded-full border border-orange-300">
+              <span className="text-orange-900 text-sm font-semibold">New! Explore Bitcoin in NYC</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Discover <span className="gradient-text">Bitcoin</span> in the Big Apple
