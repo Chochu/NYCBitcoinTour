@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: rgb(253, 186, 116);
+  --foreground: rgb(49, 46, 43);
   --gradient-primary: linear-gradient(135deg, #4F46E5 0%, #06B6D4 50%, #10B981 100%);
-  --gradient-dark: linear-gradient(135deg, #1E293B 0%, #334155 50%, #475569 100%);
+  --gradient-dark: linear-gradient(135deg, rgb(253, 186, 116), rgb(251, 146, 60), rgb(249, 115, 22));
   --gradient-button: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
 }
 
@@ -17,8 +17,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: rgb(253, 186, 116);
+    --foreground: rgb(49, 46, 43);
   }
 }
 
@@ -30,7 +30,7 @@ body {
 
 /* Gradient text utility */
 .gradient-text {
-  background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 50%, #10B981 100%);
+  background: linear-gradient(135deg, rgb(251, 146, 60) 0%, rgb(249, 115, 22) 50%, rgb(234, 88, 12) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -38,14 +38,14 @@ body {
 
 /* Gradient button */
 .gradient-button {
-  background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+  background: linear-gradient(135deg, rgb(251, 146, 60) 0%, rgb(249, 115, 22) 100%);
   transition: all 0.3s ease;
 }
 
 .gradient-button:hover {
-  background: linear-gradient(135deg, #2563EB 0%, #0891B2 100%);
+  background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(234, 88, 12) 100%);
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 10px 25px rgba(251, 146, 60, 0.4);
 }
 
 /* Wave separator */

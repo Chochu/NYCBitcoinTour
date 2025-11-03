@@ -3,14 +3,15 @@ import Link from "next/link";
 export default function TourOffer() {
   const tourOptions = [
     { name: "Visit Safari", url: "https://safariharlem.com/", icon: "🍽️" },
-    { name: "Visit Pubkey", url: "https://www.pubkey.bar/", icon: "🍺" },
-    { name: "Visit the expat", url: null, icon: "🌍" },
+  { name: "Visit Pubkey", url: "https://www.pubkey.bar/", icon: "🍺" },
+  { name: "Visit the expat", url: "https://www.theexpat.nyc/", icon: "🌍" },
     { name: "Visit btcnyc lab space", url: "https://btcnyc.github.io/", icon: "⚡" },
-    { name: "Bitcoin walk", url: "https://bitcoinwalk.org/", icon: "🚶" },
+    { name: "Bitcoin walk", url: "https://test.bitcoinwalk.org/nyc/", icon: "🚶" },
+    { name: "Visit Harlem Bitcoin space", url: "https://harlembitcoin.com/", icon: "🏠" },
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-orange-200 to-orange-300">
       {/* Hero Section */}
       <section className="hero-gradient text-white py-16">
         <div className="max-w-6xl mx-auto px-8">
