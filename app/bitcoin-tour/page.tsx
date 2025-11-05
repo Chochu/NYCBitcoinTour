@@ -96,7 +96,7 @@ export default function BitcoinTour() {
       } else {
         setMessage("Error: Something went wrong. Please try again.");
       }
-    } catch (error) {
+    } catch {
       setMessage("Error: Failed to send message. Please try again.");
     } finally {
       setIsSubmitting(false);
@@ -213,7 +213,7 @@ export default function BitcoinTour() {
                   {getDateMessage()}
                 </div>
                 <p className="text-green-600 text-sm mt-1">
-                  This date is locked and cannot be modified. To change the date, use the "Change Date" button above.
+                  This date is locked and cannot be modified. To change the date, use the &quot;Change Date&quot; button above.
                 </p>
               </div>
             )}
@@ -290,8 +290,8 @@ export default function BitcoinTour() {
             <li>• <strong>Step 2:</strong> Your selected date will appear in blue and be locked in</li>
             <li>• <strong>Step 3:</strong> Fill in your name and email address</li>
             <li>• <strong>Step 4:</strong> Add any additional details to the message box (optional)</li>
-            <li>• <strong>Step 5:</strong> Click "Book Bitcoin Tour" to submit your request</li>
-            <li>• We'll confirm your booking via email within 24 hours</li>
+            <li>• <strong>Step 5:</strong> Click &quot;Book Bitcoin Tour&quot; to submit your request</li>
+            <li>• We&apos;ll confirm your booking via email within 24 hours</li>
           </ul>
         </div>
       </section>
