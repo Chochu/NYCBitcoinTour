@@ -14,7 +14,7 @@ export default function SuccessPage() {
         <h1 className="text-3xl font-bold text-gray-900 mb-4">Request Submitted!</h1>
         
         <p className="text-gray-600 mb-6">
-          Thank you for your interest in our Bitcoin Tour! We've received your message and will contact you within 24 hours to discuss your tour details.
+          Thank you for your interest in our Bitcoin Tour! We&apos;ve received your message and will contact you within 24 hours to discuss your tour details.
         </p>
 
         <div className="space-y-4">
