@@ -12,9 +12,14 @@ interface CalendarEvent {
   end?: string;
   backgroundColor?: string;
   borderColor?: string;
+  id?: string;
 }
 
-export default function Calendar() {
+interface CalendarProps {
+  onDateSelect?: (date: string) => void;
+}
+
+export default function Calendar({ onDateSelect }: CalendarProps) {
   // Example events - you can replace this with actual data from an API
   const initialEvents = useMemo<CalendarEvent[]>(() => {
     const today = new Date();
@@ -23,25 +28,9 @@ export default function Calendar() {
     const threeDaysLater = new Date(today);
     threeDaysLater.setDate(threeDaysLater.getDate() + 3);
 
+    
     return [
-      {
-        title: 'Bitcoin Tour Available',
-        start: today.toISOString().split('T')[0],
-        backgroundColor: '#10B981',
-        borderColor: '#059669',
-      },
-      {
-        title: 'Bitcoin Tour Available',
-        start: tomorrow.toISOString().split('T')[0],
-        backgroundColor: '#10B981',
-        borderColor: '#059669',
-      },
-      {
-        title: 'Bitcoin Tour Available',
-        start: threeDaysLater.toISOString().split('T')[0],
-        backgroundColor: '#10B981',
-        borderColor: '#059669',
-      },
+      
     ];
   }, []);
 
@@ -64,28 +53,38 @@ export default function Calendar() {
   }, []);
 
   const handleDateSelect = (selectInfo: { startStr: string; endStr: string }) => {
-    const title = prompt('Please enter a title for your tour booking:');
-    if (title) {
-      setEvents([
-        ...events,
-        {
-          title,
-          start: selectInfo.startStr,
-          end: selectInfo.endStr,
-          backgroundColor: '#3B82F6',
-          borderColor: '#2563EB',
-        },
-      ]);
+    // Call the parent component's onDateSelect function if provided
+    if (onDateSelect) {
+      onDateSelect(selectInfo.startStr);
     }
+    
+    // Remove any existing "Bitcoin Tour Selected" events
+    const filteredEvents = events.filter(event => event.title !== 'Bitcoin Tour Selected');
+    
+    // Add the new selected event
+    const newEvent = {
+      title: 'Bitcoin Tour Selected',
+      start: selectInfo.startStr,
+      end: selectInfo.endStr,
+      backgroundColor: '#3B82F6',
+      borderColor: '#2563EB',
+      id: 'selected-tour', // Add ID for easy identification
+    };
+    
+    setEvents([...filteredEvents, newEvent]);
   };
 
   const handleEventClick = (clickInfo: { event: { title: string; remove: () => void } }) => {
-    if (
-      confirm(
-        `Are you sure you want to book the tour on ${clickInfo.event.title}?`
-      )
-    ) {
-      clickInfo.event.remove();
+    if (clickInfo.event.title === 'Bitcoin Tour Selected') {
+      if (confirm('Are you sure you want to remove your selected tour date?')) {
+        clickInfo.event.remove();
+        // Also update our local state to keep consistency
+        setEvents(events.filter(event => event.title !== 'Bitcoin Tour Selected'));
+      }
+    } else {
+      if (confirm(`Are you sure you want to remove the ${clickInfo.event.title}?`)) {
+        clickInfo.event.remove();
+      }
     }
   };
 
@@ -177,6 +176,11 @@ export default function Calendar() {
           border-radius: 0.375rem !important;
           padding: 0.25rem 0.5rem !important;
         }
+        .fc-event[title="Bitcoin Tour Selected"] {
+          background-color: #3B82F6 !important;
+          border-color: #2563EB !important;
+          font-weight: bold !important;
+        }
         .fc-daygrid-day:hover {
           background-color: rgba(59, 130, 246, 0.1) !important;
         }
@@ -216,4 +220,3 @@ export default function Calendar() {
     </div>
   );
 }
-
